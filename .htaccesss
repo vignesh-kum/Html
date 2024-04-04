@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTPS_HOST} ^bringmeal.com [NC]
+RewriteRule ^(.*)$ https://www.bringmeal.com/$1 [L,R=301]
+
+RewriteEngine on 
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/ 
+RewriteRule ^index\.php$ https://www.bringmeal.com/ [R=301,L] 
+
+ErrorDocument 404 /not-found.html
